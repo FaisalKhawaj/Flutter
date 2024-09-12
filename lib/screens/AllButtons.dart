@@ -41,7 +41,6 @@ class AllButtons extends StatelessWidget{
             foregroundColor: Colors.white,
             fixedSize: Size(MediaQuery.of(context).size.width-50, 45),
             shape: RoundedRectangleBorder(
-
                 borderRadius: BorderRadius.circular(10)),
           ), onPressed: (){}, child: Text(style: TextStyle(fontFamily: 'Poppins',
           fontSize: 16
