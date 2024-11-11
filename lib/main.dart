@@ -1,5 +1,6 @@
 
 import 'package:first_app/screens/AllWidgets.dart';
+import 'package:first_app/screens/Login.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,12 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Demo',
       theme: ThemeData(
+
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white30),
         useMaterial3: true,
       ),
-      home: const AllWidgets(),
+      home: const Login(),
     );
   }
 }

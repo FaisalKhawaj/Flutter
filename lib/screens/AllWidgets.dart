@@ -29,7 +29,7 @@ class AllWidgets extends StatelessWidget{
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-    title:const Text('All Widgets'),
+    title:const Center(child: Text('All Widgets',textAlign: TextAlign.center,)) ,
     backgroundColor: Colors.amberAccent ,
     shape: const RoundedRectangleBorder(borderRadius:BorderRadius.vertical(bottom: Radius.circular(20))),
     foregroundColor: Colors.blue,
@@ -52,31 +52,31 @@ return Scaffold(
             }, child: const Text('Buttons')),
       ),
       ),
-    SizedBox(height: 5,),
+    const SizedBox(height: 5,),
     OutlinedButton(
         style: OutlinedButton.styleFrom(
           foregroundColor: Colors.black,
           fixedSize: Size(MediaQuery.of(context).size.width-50, 45),
-side: BorderSide(color: Colors.black,width: 1),
+side: const BorderSide(color: Colors.black,width: 1),
 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
         ),
         onPressed: (){
           Navigator.of(context).push(_createRoute(const CustomTextInput()));
 
-        }, child: Text('TextInput')),
-      SizedBox(height: 5,),
+        }, child: const Text('TextInput')),
+      const SizedBox(height: 5,),
     const Text('Images',
       style: TextStyle(fontSize: 22, color: Colors.black),),
       ElevatedButton(onPressed: (){
         Navigator.of(context).push(_createRoute(const Home()));
 
-      }, child: Text('Home')),
-      SizedBox(height: 5,),
+      }, child: const Text('Home')),
+      const SizedBox(height: 5,),
       OutlinedButton(style:OutlinedButton.styleFrom(
         fixedSize: Size(MediaQuery.of(context).size.width-50, 50)
       ), onPressed: (){
         Navigator.of(context).push(_createRoute(const SearchDeals()));
-      }, child: Text('Search Deals'))
+      }, child: const Text('Search Deals'))
 ],)
   ,),backgroundColor: Colors.white,);
 

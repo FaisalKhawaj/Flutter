@@ -10,24 +10,25 @@ class CustomTextInput extends StatelessWidget{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('TextInputs'),
+        title: const Text('TextInputs'),
       ),
       body: SingleChildScrollView(
         child: Center(child: Column(children: [
-          SizedBox(height: 10,),
-          Padding(padding: EdgeInsets.all(10),
-            child:const TextField(decoration:const InputDecoration(labelText: 'FullName',border: const OutlineInputBorder()),),
+          const SizedBox(height: 10,),
+          const Padding(padding: EdgeInsets.all(10),
+            child:TextField(
+              decoration:InputDecoration(labelText: 'FullName',border: OutlineInputBorder()),),
           ),  // FullName
-          SizedBox(height: 10,),
-          Padding(padding:  EdgeInsets.all(10),
-            child: TextField(decoration: InputDecoration(
+          const SizedBox(height: 10,),
+          Padding(padding:  const EdgeInsets.all(10),
+            child: TextField(keyboardType:TextInputType.emailAddress, decoration: InputDecoration(
                 labelText: 'Email',
 
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(30),borderSide: BorderSide(width: 1,color: Colors.black))
-            ),style: TextStyle( color: Colors.red),),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(30),borderSide: const BorderSide(width: 1,color: Colors.black))
+            ),style: const TextStyle( color: Colors.red),),
           ), // Email
-          SizedBox(height: 10,),
-          Padding( padding: EdgeInsets.all(10),
+          const SizedBox(height: 10,),
+          const Padding( padding: EdgeInsets.all(10),
             child:TextField(decoration: InputDecoration(
                 labelText: 'Password',
                 border: UnderlineInputBorder()
@@ -35,15 +36,15 @@ class CustomTextInput extends StatelessWidget{
               obscureText: true,
             ) ,
           ), // Password
-          SizedBox(height: 10,),
-          Padding(padding: EdgeInsets.all(10),
+          const SizedBox(height: 10,),
+          const Padding(padding: EdgeInsets.all(10),
             child: TextField(decoration: InputDecoration(
                 labelText: 'LastName',
                 border: InputBorder.none
             ),),
           ), // LastName
-          SizedBox(height: 10,),
-          Padding(padding: EdgeInsets.all(10),
+          const SizedBox(height: 10,),
+          const Padding(padding: EdgeInsets.all(10),
             child: TextField(decoration: InputDecoration(
                 labelText: 'Age',
                 // labelStyle: ,
@@ -52,45 +53,45 @@ class CustomTextInput extends StatelessWidget{
                 border: InputBorder.none
             ),keyboardType: TextInputType.number,),
           ), // Age
-          SizedBox(height: 10,),
-          Padding(padding: EdgeInsets.all(10),
+          const SizedBox(height: 10,),
+          const Padding(padding: EdgeInsets.all(10),
             child: TextField(decoration: InputDecoration(
               labelText: 'PhoneNumber',
-
               border: OutlineInputBorder(),
               prefixIcon: Icon(Icons.phone,color: Colors.black,size: 20,)
             ),keyboardType: TextInputType.phone,),
           ), // PhoneNumber,
-          SizedBox(height: 10,),
-TextField(decoration: InputDecoration(
+          const SizedBox(height: 10,),
+TextField(
+  decoration: InputDecoration(
   labelText: 'CustomBorder',
-    labelStyle: TextStyle(color: Colors.black),
-    focusedBorder: OutlineInputBorder(
+    labelStyle: const TextStyle(color: Colors.black),
+    focusedBorder: const OutlineInputBorder(
       borderSide: BorderSide(color: Colors.black, width: 2),
     ),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.circular(4),
-    borderSide: BorderSide(color: Colors.orange, width: 4,style: BorderStyle.solid)
+    borderSide: const BorderSide(color: Colors.orange, width: 4,style: BorderStyle.solid)
   )
 ),),
-          SizedBox(height: 10,),
-          Text('TextFormField'),
+          const SizedBox(height: 10,),
+          const Text('TextFormField'),
           TextFormField(
             decoration: const InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your username',
             ),
           ),
-          SizedBox(height: 10,),
-          TextField(
+          const SizedBox(height: 10,),
+          const TextField(
             decoration: InputDecoration(
               labelText: 'Username',
               errorText: "Username can't be empty"
               // error:
             ),
           ),
-          SizedBox(height: 10,),
-          Padding(padding: EdgeInsets.all(5),
+          const SizedBox(height: 10,),
+          const Padding(padding: EdgeInsets.all(5),
           child:    TextField(
             decoration: InputDecoration(
               focusColor: Colors.black,
@@ -105,8 +106,8 @@ TextField(decoration: InputDecoration(
             maxLines: 5,
           ),
           ),
-          SizedBox(height: 10,),
-          Padding(
+          const SizedBox(height: 10,),
+          const Padding(
             padding: EdgeInsets.all(5),
             child: TextField(
               decoration: InputDecoration(
@@ -119,12 +120,12 @@ TextField(decoration: InputDecoration(
               maxLength: 100,
             ),
           ),
-          SizedBox(height: 10,),
-          PasswordField(
+          const SizedBox(height: 10,),
+          const PasswordField(
             // controller: , // Optional: Pass a TextEditingController if needed
             labelText: 'Enter your password', // Optional: Customize the label text
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
 
 
         ],),),

@@ -9,5 +9,6 @@ class  ImageConstant{
       static String list2 = '$imagePath/list2.png';
       static String food1 = '$imagePath/food1.png';
       static String food2 = '$imagePath/food2.png';
+      static String loginImage = '$imagePath/login.png';
 
 }
