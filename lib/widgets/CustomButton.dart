@@ -38,7 +38,9 @@ class CustomButton extends StatelessWidget{
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
         ),
         onPressed:onPressed, child: Text(buttonName,style: TextStyle(
-      color: textColor
+      color: textColor,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Inter'
     ),)
     );
 

@@ -11,6 +11,9 @@ class AllButtons extends StatelessWidget{
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.notification_important))
+        ],
         title:const Text('Buttons'),
       ) ,
       body: Center( child:

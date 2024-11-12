@@ -29,7 +29,11 @@ class AllWidgets extends StatelessWidget{
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-    title:const Center(child: Text('All Widgets',textAlign: TextAlign.center,)) ,
+    actions: [
+      IconButton(onPressed: (){}, icon: Icon(Icons.notification_important)),
+
+    ],
+    title:const Text('All Widgets',) ,
     backgroundColor: Colors.amberAccent ,
     shape: const RoundedRectangleBorder(borderRadius:BorderRadius.vertical(bottom: Radius.circular(20))),
     foregroundColor: Colors.blue,
