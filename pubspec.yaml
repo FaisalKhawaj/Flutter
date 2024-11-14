@@ -42,6 +42,7 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   pinput: ^5.0.0
   route_manager: ^2.0.2
+  flutter_svg: ^2.0.14
 
 dev_dependencies:
   flutter_test:

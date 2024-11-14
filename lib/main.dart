@@ -1,11 +1,7 @@
 
 import 'package:first_app/routes/app_routes.dart';
 import 'package:first_app/routes/app_pages.dart';
-
-import 'package:first_app/screens/AllWidgets.dart';
-import 'package:first_app/screens/auth/view/Login.dart';
-
-import 'package:first_app/screens/auth/view/Onboarding.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Import GetX
 

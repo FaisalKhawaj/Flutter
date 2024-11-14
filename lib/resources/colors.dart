@@ -7,6 +7,7 @@ class AppColor{
   Color primaryDescription = const Color(0xFFA8ACB4);
   Color primaryGreyText = const Color(0xFF797B89);
 
+  Color primaryGreyBox=const Color(0xFFfefefe);
 
   // buttons
 Color primaryButtonText = const Color(0xFFFFDE33);

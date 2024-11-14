@@ -1,6 +1,7 @@
 
 
 import 'package:first_app/app_export.dart';
+import 'package:first_app/routes/app_routes.dart';
 import 'package:first_app/routes/my_navigator.dart';
 import 'package:first_app/screens/auth/view/Login.dart';
 import 'package:first_app/screens/auth/view/verify-contact-details.dart';
@@ -16,11 +17,18 @@ class Signup extends StatefulWidget{
 }
 
 class _SignupState extends State<Signup>{
+  GlobalKey<FormState> formkey=GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _fullnameController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
-  final TextEditingController _emailController=TextEditingController();
-  final TextEditingController _fullnameController=TextEditingController();
-  final TextEditingController _passwordController=TextEditingController();
-  final TextEditingController _confirmPasswordController=TextEditingController();
+  FocusNode emailFN = FocusNode();
+  FocusNode fullNameFN = FocusNode();
+  FocusNode passwordFN = FocusNode();
+  FocusNode confirmPasswordFN = FocusNode();
+  FocusNode phoneNumberFN=FocusNode();
 
 String get email => _emailController.text;
 String get fullName=>_fullnameController.text;
@@ -36,6 +44,11 @@ String get confirmPassword=>_confirmPasswordController.text;
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState(){
+    super.initState();
   }
   @override
   Widget build(BuildContext context) {
@@ -92,6 +105,8 @@ String get confirmPassword=>_confirmPasswordController.text;
 
                Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                  child:  TextField(
+                   controller: _fullnameController,
+                   focusNode: fullNameFN,
                    decoration: InputDecoration(
                      hintText: 'Full name',
                      filled: true,
@@ -122,8 +137,10 @@ String get confirmPassword=>_confirmPasswordController.text;
 
                ),
                // Email
-               Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+               Padding(padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                  child:  TextField(
+                   controller: _emailController,
+                   focusNode: emailFN,
                    keyboardType: TextInputType.emailAddress,
                    decoration: InputDecoration(
                      hintText: 'Email',
@@ -154,10 +171,13 @@ String get confirmPassword=>_confirmPasswordController.text;
                  ),),
 
                // Phone number
-               Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+               Padding(padding:const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                  child:  TextField(
+                   controller: _phoneNumberController,
+                   focusNode: phoneNumberFN,
                    keyboardType: TextInputType.phone,
-                   decoration: InputDecoration(hintText: 'Mobile Number', filled: true, focusColor: AppColors.inputBorder, fillColor: AppColors.inputBackground,
+                   decoration: InputDecoration(
+                     hintText: 'Mobile Number', filled: true, focusColor: AppColors.inputBorder, fillColor: AppColors.inputBackground,
                      errorBorder: OutlineInputBorder(
                          borderSide:  BorderSide(
                              width: 1, color: Colors.red),
@@ -180,8 +200,10 @@ String get confirmPassword=>_confirmPasswordController.text;
                  ),),
 
                // Password
-               Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                 child:  TextField(obscureText: true,
+               Padding(padding:const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                 child:  TextField(
+                   focusNode: passwordFN,
+                   obscureText: true,
                    keyboardType: TextInputType.emailAddress,
                    decoration: InputDecoration(hintText: 'Password', filled: true, suffixIcon: Icon(Icons.remove_red_eye), focusColor: AppColors.inputBorder, fillColor: AppColors.inputBackground,
                      errorBorder: OutlineInputBorder(
@@ -205,8 +227,10 @@ String get confirmPassword=>_confirmPasswordController.text;
                      ),),
                  ),),
                // Confirm Password
-               Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+               Padding(padding:const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                  child: TextField(
+                   controller: _confirmPasswordController,
+                   focusNode: confirmPasswordFN,
                    obscureText: true,
                    decoration: InputDecoration(
                      filled: true,
@@ -235,14 +259,13 @@ String get confirmPassword=>_confirmPasswordController.text;
                  ),
                ),
 
-               SizedBox(height: 20,),
+              const SizedBox(height: 20,),
 
                CustomButton(
                  textColor: Colors.white,
                  buttonName: 'Signup',
                  onPressed: (){
-                   MyNavigator.navigateTo(context, VerifyContactDetails());
-
+                   Get.toNamed(Routes.verifyContactDetails);
                  },
                  backgroundColor: AppColors.primaryButton,
                  width: MediaQuery.of(context).size.width*0.9,
