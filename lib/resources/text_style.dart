@@ -1,6 +1,5 @@
 
 
-import 'dart:ui';
 import 'package:first_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +45,21 @@ class AppTextStyle{
 
   TextStyle unselectedDealButton(){
     return TextStyle(color: AppColors.primaryButton, fontSize: 20,fontFamily: 'Inter',fontWeight: FontWeight.bold);
+  }
+
+  TextStyle homeDealHeaderTitle(){
+    return  TextStyle(
+    fontSize: 30,
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.bold
+    );
+  }
+
+  TextStyle homeDealHeaderDescription(){
+    return TextStyle(
+      color: AppColors.primaryDescription, fontSize: 16, fontFamily: 'Inter',
+        fontWeight: FontWeight.w500
+    );
   }
 
   BoxShadow dealBoxShadow(){

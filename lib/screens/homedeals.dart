@@ -42,17 +42,13 @@ class HomeDeals extends StatelessWidget{
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Home',style: TextStyle(
-              fontSize: 30,
-              fontFamily: 'Inter',
-              fontWeight: FontWeight.bold
-            ),),
-            const Text('Worry free deals',)
+             Text('Home',style: R.textStyle.homeDealHeaderTitle()),
+             Text('Worry free deals',style: R.textStyle.homeDealHeaderDescription(),)
           ],
         ),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.notification_important,color: AppColors.primaryDescription,size: 30,)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.search,color: AppColors.primaryDescription,size: 30)),
+          IconButton(onPressed: (){}, icon:const Icon(Icons.notification_important,color: AppColors.black,size: 30,)),
+          IconButton(onPressed: (){}, icon: const Icon(Icons.search_outlined,color: AppColors.black,size: 30)),
         ],
       ),
       body: SafeArea(child: Padding(padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
@@ -72,7 +68,11 @@ class HomeDeals extends StatelessWidget{
                 return  DealsButton(item:dealCategory[index]);
               },
             ),
-          )
+          ),
+          SizedBox(height: 40,),
+          Text('My Deals',style:R.textStyle.dealCategoryTitle()),
+          Text('Worry free deals',style: R.textStyle.homeDealHeaderDescription().copyWith(fontSize: 14, fontWeight: FontWeight.w400),),
+          SizedBox(height: 20,),
 
         ],) ,)),
     );
