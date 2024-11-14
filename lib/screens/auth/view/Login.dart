@@ -1,6 +1,8 @@
 import 'package:first_app/app_export.dart';
+import 'package:first_app/routes/app_routes.dart';
 import 'package:first_app/routes/my_navigator.dart';
 import 'package:first_app/screens/auth/view/Signup.dart';
+import 'package:first_app/screens/auth/view/forgotpassword.dart';
 import 'package:first_app/widgets/CustomButton.dart';
 import 'package:first_app/widgets/CustomCheckbox.dart';
 import 'package:flutter/material.dart';
@@ -32,11 +34,16 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: AppColors.backgroundPrimary,
       appBar: AppBar(
+        automaticallyImplyLeading:false,
         surfaceTintColor: Colors.white,
         centerTitle: false,
         backgroundColor: AppColors.backgroundPrimary,
         title: IconButton.outlined(
-            onPressed: () {},
+            onPressed: () {
+              if (Navigator.of(context).canPop()) {
+                Navigator.of(context).maybePop();
+              }
+            },
             style: IconButton.styleFrom(
                 side:const  BorderSide(width: 1,color: AppColors.inputPlaceholderColor),
                 shape: RoundedRectangleBorder(
@@ -163,7 +170,11 @@ class _LoginState extends State<Login> {
                         ),)
                       ],
                     ),
-                    ElevatedButton(onPressed: (){},
+                    ElevatedButton(onPressed: (){
+
+                      MyNavigator.navigateTo(context, ForgotPassword());
+
+                    },
                         style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,
                             padding: EdgeInsets.zero,
@@ -183,7 +194,9 @@ class _LoginState extends State<Login> {
                 CustomButton(
                   textColor: Colors.white,
                   buttonName: 'LOG IN',
-                  onPressed: (){},
+                  onPressed: (){
+                    // Get.toNamed(Routes.verifyContactDetails)
+                  },
                   backgroundColor: AppColors.primaryButton,
                   width: MediaQuery.of(context).size.width*0.9,
                 )
@@ -211,10 +224,7 @@ class _LoginState extends State<Login> {
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))
                         ),
                         onPressed: (){
-                          MyNavigator.navigateTo(context, Signup());
-
-                          // Navigator.of(context).push(_createRoute(const Signup()));
-
+                          Get.toNamed(Routes.signup);
                         }, child: const Text('Sign up',style: TextStyle(
                         fontFamily: 'Inter',color: AppColors.black,
                         fontWeight: FontWeight.bold

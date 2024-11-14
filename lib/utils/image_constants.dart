@@ -12,6 +12,7 @@ class  ImageConstant{
       static String loginImage = '$imagePath/login.png';
       static String signupLogo = '$imagePath/signuplogo.png';
       static String onboarding1 = '$imagePath/onboarding1.png';
+      static String forgotBubble= '$imagePath/forgotbubble.png';
 
 
 }

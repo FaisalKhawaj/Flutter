@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget{
     required this.onPressed,
     this.width,
     this.height=48,
-    this.backgroundColor,
+    this.backgroundColor=AppColors.primaryButton,
     this.textColor = Colors.white,
     this.borderRadius,
 });
@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget{
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor:backgroundColor?? this.backgroundColor,
+            backgroundColor:backgroundColor,
             overlayColor: AppColors.primaryButton,
             elevation: 0,
             fixedSize: Size(width?? MediaQuery.of(context).size.width*0.9,height),

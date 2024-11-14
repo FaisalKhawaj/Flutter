@@ -7,6 +7,7 @@ class AppColors{
   static const Color primaryHeading=Color(0xFF323C5F);
   static const Color primaryInactiveDot=Color(0xFF7A9CFF);
   static const Color primaryDescription = Color(0xFFA8ACB4);
+  static const Color borderPinCode=Color(0xFFC9D3F5);
   static const Color primaryColor = Color(0xFFA8ACB4);
   static const Color primaryDarkColor = Color(0xFF1E1E1E);
   static const Color primaryLightColor = Color(0xFFEFEFEF);

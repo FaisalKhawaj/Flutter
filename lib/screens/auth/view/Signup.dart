@@ -2,6 +2,8 @@
 
 import 'package:first_app/app_export.dart';
 import 'package:first_app/routes/my_navigator.dart';
+import 'package:first_app/screens/auth/view/Login.dart';
+import 'package:first_app/screens/auth/view/verify-contact-details.dart';
 import 'package:first_app/theme/app_colors.dart';
 import 'package:first_app/widgets/CustomButton.dart';
 import 'package:flutter/material.dart';
@@ -39,13 +41,13 @@ String get confirmPassword=>_confirmPasswordController.text;
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
      body: GestureDetector(
          onTap: (){
            FocusScope.of(context).requestFocus(FocusNode());
          },
          child: SingleChildScrollView(
-           child:  Column(
+           child: SafeArea(child:  Column(
              children: [
                // Header Logo Title
                Container(
@@ -53,7 +55,7 @@ String get confirmPassword=>_confirmPasswordController.text;
                  // constraints:,
                  width: double.infinity,
                  height: 250,
-                 decoration: BoxDecoration(
+                 decoration: const BoxDecoration(
                      color: AppColors.primaryButton,
                      borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20),bottomRight: Radius.circular(20))),
                  child: Center(
@@ -62,7 +64,7 @@ String get confirmPassword=>_confirmPasswordController.text;
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
                        Image.asset(ImageConstant.signupLogo,fit: BoxFit.contain, height: 120, width: 120,),
-                       Text('YAKEEN KAR',style: TextStyle(color: AppColors.white, fontFamily:'Inter', fontSize:28, fontWeight: FontWeight.bold),),
+                       Text("DEMO APP",style: TextStyle(color: AppColors.white, fontFamily:'Inter', fontSize:28, fontWeight: FontWeight.bold),),
 
                      ],
                    ),
@@ -206,10 +208,9 @@ String get confirmPassword=>_confirmPasswordController.text;
                Padding(padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                  child: TextField(
                    obscureText: true,
-
                    decoration: InputDecoration(
                      filled: true,
-                     suffixIcon: Icon(Icons.remove_red_eye),
+                     suffixIcon: const Icon(Icons.remove_red_eye),
                      fillColor: AppColors.inputBackground,
                      focusColor: AppColors.inputBackground,
                      enabledBorder: OutlineInputBorder(
@@ -219,7 +220,7 @@ String get confirmPassword=>_confirmPasswordController.text;
                            color: AppColors.inputBorder.withOpacity(0.8)),
                      ),
                      focusedErrorBorder: OutlineInputBorder(
-                         borderSide: BorderSide(width: 1,color: Colors.red)
+                         borderSide:const BorderSide(width: 1,color: Colors.red)
                      ),
                      focusedBorder: OutlineInputBorder(
                        borderRadius: BorderRadius.circular(8),
@@ -239,7 +240,10 @@ String get confirmPassword=>_confirmPasswordController.text;
                CustomButton(
                  textColor: Colors.white,
                  buttonName: 'Signup',
-                 onPressed: (){},
+                 onPressed: (){
+                   MyNavigator.navigateTo(context, VerifyContactDetails());
+
+                 },
                  backgroundColor: AppColors.primaryButton,
                  width: MediaQuery.of(context).size.width*0.9,
                ),
@@ -282,7 +286,7 @@ String get confirmPassword=>_confirmPasswordController.text;
 
 
              ],
-           ),
+           )),
          ),
        ),
     );

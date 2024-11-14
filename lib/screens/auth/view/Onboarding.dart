@@ -1,7 +1,12 @@
 
 
 import 'package:first_app/app_export.dart';
+import 'package:first_app/routes/app_routes.dart';
+import 'package:first_app/routes/my_navigator.dart';
+import 'package:first_app/screens/auth/view/Login.dart';
+import 'package:first_app/screens/auth/view/Signup.dart';
 import 'package:first_app/widgets/CustomButton.dart';
+import '../../../resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/rendering.dart';
@@ -44,7 +49,7 @@ class _OnboardingScreenState extends State<Onboarding>{
     // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(backgroundColor: Colors.white , title: Text(''),),
+      appBar: AppBar(        automaticallyImplyLeading:false, backgroundColor: Colors.white , title: Text(''),),
       body: SafeArea(child:
       Column(
         children: [
@@ -87,12 +92,16 @@ class _OnboardingScreenState extends State<Onboarding>{
             child:currentIndex<onboardingData.length-1?  Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                OutlinedButton( onPressed: (){},style: OutlinedButton.styleFrom(
+                OutlinedButton( onPressed: (){
+                  Get.toNamed(Routes.login);
+                },style: OutlinedButton.styleFrom(
                   foregroundColor: AppColors.primaryButton,
                   side: BorderSide(width: 1,color: AppColors.primaryButton),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),  child: Text('SKIP',style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.bold),)),
-                OutlinedButton( onPressed: (){},style: OutlinedButton.styleFrom(
+                OutlinedButton( onPressed: (){
+
+                },style: OutlinedButton.styleFrom(
                   foregroundColor: Colors.yellow,
                   backgroundColor: AppColors.primaryButton,
                   side: BorderSide(width: 1,color: AppColors.primaryButton),
@@ -102,18 +111,24 @@ class _OnboardingScreenState extends State<Onboarding>{
               ],
             ):Column(
               children: [
+                // Login Button
                 CustomButton(
                   textColor: Colors.yellow,
                   buttonName: 'LOG IN',
-                  onPressed: (){},
+                  onPressed: (){
+                    Get.toNamed(Routes.login);
+                  },
                   backgroundColor: AppColors.primaryButton,
                   width: MediaQuery.of(context).size.width*0.9,
                 ),
-SizedBox(height: 20,),
+           const SizedBox(height: 20,),
+                // Signup
                 CustomButton(
                   textColor: Colors.yellow,
                   buttonName: 'SIGN UP',
-                  onPressed: (){},
+                  onPressed: (){
+                    Get.toNamed(Routes.signup);
+                  },
                   backgroundColor: AppColors.primaryButton,
                   width: MediaQuery.of(context).size.width*0.9,
                 )
@@ -155,19 +170,13 @@ class OnboardingContent extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style:R.textStyle.boldOnboarding(),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
                 Text(
                   description,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
+                  style:R.textStyle.descriptionOnboarding(),
                   textAlign: TextAlign.center,
                 ),
               ],
