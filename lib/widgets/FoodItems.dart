@@ -2,7 +2,6 @@
 
 import 'package:first_app/app_export.dart';
 import 'package:first_app/theme/theme_helper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FoodItems extends StatelessWidget{
@@ -27,7 +26,7 @@ class FoodItems extends StatelessWidget{
         color: Colors.white,
         boxShadow: [BoxShadow(spreadRadius: 0.5,
             blurRadius: 2,
-            offset: Offset(0,2),
+            offset: const Offset(0,2),
             color: Colors.black.withOpacity(0.2)
         )],
         borderRadius: BorderRadius.circular(20),
@@ -37,7 +36,7 @@ class FoodItems extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          ClipRRect(borderRadius:const BorderRadius.only(topLeft:const Radius.circular(10),topRight: const Radius.circular(10)),
+          ClipRRect(borderRadius:const BorderRadius.only(topLeft:Radius.circular(10),topRight: Radius.circular(10)),
             child:
             Image.asset(ImageConstant.food1,height: 150 ,fit:BoxFit.cover, width: MediaQuery.of(context).size.width,)
             ,),

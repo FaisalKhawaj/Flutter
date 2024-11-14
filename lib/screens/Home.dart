@@ -1,4 +1,3 @@
-import 'package:first_app/theme/theme_helper.dart';
 import 'package:first_app/utils/image_constants.dart';
 import 'package:first_app/widgets/CardTitleSubtitleMore.dart';
 import 'package:first_app/widgets/FoodItems.dart';
@@ -30,14 +29,14 @@ import 'package:flutter/material.dart';
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(onPressed: (){}, icon:Icon(Icons.location_pin)),
+              IconButton(onPressed: (){}, icon:const Icon(Icons.location_pin)),
               // Image(image: H)
               Image.asset(ImageConstant.homeLogoHeader,
                   height: 60,
                   width: 60,
                   fit: BoxFit.contain),
 
-              IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+              IconButton(onPressed: (){}, icon: const Icon(Icons.search)),
 
             ],
           ),
@@ -45,7 +44,7 @@ import 'package:flutter/material.dart';
         )),
 
       body: SingleChildScrollView(
-        child: Padding( padding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+        child: Padding( padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 20),
           child:Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -57,8 +56,8 @@ import 'package:flutter/material.dart';
                   //
                   },
               ),
-              SizedBox(height: 14,),
-              Container(
+              const SizedBox(height: 14,),
+              SizedBox(
                 width: MediaQuery.of(context).size.width*0.8,
                 // margin: EdgeInsets.only(right: 40),
 // margin: EdgeInsets.all(0),
@@ -133,7 +132,7 @@ import 'package:flutter/material.dart';
                 ),
               )
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               CardTitleSubtitleMore(
                 actionLabel: 'Se mer',
                 title: 'Restauranger',
@@ -161,18 +160,17 @@ import 'package:flutter/material.dart';
                   //
                 },
               ),
-              SizedBox(height: 14,),
+              const SizedBox(height: 14,),
 
               SizedBox(
                 height: MediaQuery.of(context).size.height*0.4,
                 child: ListView.builder(scrollDirection: Axis.vertical,
                     itemCount: 10,
                     itemBuilder: (context,index){
-                  return FoodLists(title: "This",description: "s");
+                  return const FoodLists(title: "This",description: "s");
                 }),
               )
             ],
-
           ),
 
 

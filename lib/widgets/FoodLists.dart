@@ -1,7 +1,6 @@
 
 
 import 'package:first_app/app_export.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/theme/theme_helper.dart';
 
@@ -24,7 +23,7 @@ class FoodLists extends StatelessWidget{
           boxShadow: [BoxShadow(
               spreadRadius: 2,
               blurRadius: 4,
-              offset: Offset(0,3),
+              offset: const Offset(0,3),
               color: Colors.black.withOpacity(0.2)
           )]
       ),
@@ -33,20 +32,20 @@ class FoodLists extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ClipRRect(
-            child:Image.asset(ImageConstant.food2,height: 90,width: 90,fit: BoxFit.cover,),
             borderRadius: const BorderRadius.all(Radius.circular(20)),
+            child:Image.asset(ImageConstant.food2,height: 90,width: 90,fit: BoxFit.cover,),
 
           ),
-          SizedBox(width: 10,),
+          const SizedBox(width: 10,),
           Column(spacing: 5, crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Falvortose',style: TextStyle(
+              const Text('Falvortose',style: TextStyle(
                   color: Colors.black,
                   fontFamily: 'Inter',
                   fontSize: 16,
                   fontWeight: FontWeight.w600
               ),),
-              SizedBox(height: 3,),
+              const SizedBox(height: 3,),
               Text('Lesb,pizza',style: TextStyle(
                   color: appTheme.gray5002,
                   fontSize: 12, fontWeight: FontWeight.w500

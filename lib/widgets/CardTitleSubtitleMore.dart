@@ -3,7 +3,6 @@
 
 
 import 'package:first_app/theme/theme_helper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardTitleSubtitleMore extends StatelessWidget{
@@ -37,7 +36,7 @@ class CardTitleSubtitleMore extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(actionLabel,style:theme.textTheme.headlineMedium ,),
-            IconButton( onPressed: onActionPressed, icon: Icon(Icons.chevron_right))
+            IconButton( onPressed: onActionPressed, icon: const Icon(Icons.chevron_right))
           ],
         )
       ],

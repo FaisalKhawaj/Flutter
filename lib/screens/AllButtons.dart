@@ -11,6 +11,9 @@ class AllButtons extends StatelessWidget{
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.notification_important))
+        ],
         title:const Text('Buttons'),
       ) ,
       body: Center( child:
@@ -31,19 +34,18 @@ class AllButtons extends StatelessWidget{
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w400
           ),)),
-          SizedBox(height: 3,),
-          ElevatedButton(onPressed: (){}, child: Text('Simple Elevated Button')),
-          SizedBox(height: 3,),
-          OutlinedButton(onPressed: (){}, child: Text('Simple Outlined Button')),
-          SizedBox(height: 3,),
+          const SizedBox(height: 3,),
+          ElevatedButton(onPressed: (){}, child: const Text('Simple Elevated Button')),
+          const SizedBox(height: 3,),
+          OutlinedButton(onPressed: (){}, child: const Text('Simple Outlined Button')),
+          const SizedBox(height: 3,),
           OutlinedButton(style: OutlinedButton.styleFrom(
             backgroundColor: Colors.black,
             foregroundColor: Colors.white,
             fixedSize: Size(MediaQuery.of(context).size.width-50, 45),
             shape: RoundedRectangleBorder(
-
                 borderRadius: BorderRadius.circular(10)),
-          ), onPressed: (){}, child: Text(style: TextStyle(fontFamily: 'Poppins',
+          ), onPressed: (){}, child: const Text(style: TextStyle(fontFamily: 'Poppins',
           fontSize: 16
           ), 'Outlined Button')),
           // RaisedButton(onPress:(){},child:Text('RaisedButton')),
