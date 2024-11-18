@@ -9,9 +9,9 @@ import 'package:first_app/screens/homedeals.dart'; // Import the MyItem class fr
 class DealsButton extends StatelessWidget{
 
 final MyItem item;
+final bool isSelected;
 
-
-   DealsButton({super.key,required this.item,});
+   DealsButton({super.key,required this.item,required this.isSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ final MyItem item;
       constraints: BoxConstraints.expand(width:MediaQuery.of(context).size.width*0.32,height: 170 ),
       decoration: BoxDecoration(
         boxShadow: [R.textStyle.dealBoxShadow()],
-        color: Colors.white,
+        color:isSelected?AppColors.primaryButton: Colors.white,
         // color: R.colors.primaryGreyBox,
         borderRadius: BorderRadius.circular(10),
       ),
@@ -31,18 +31,24 @@ final MyItem item;
         children: [
           Container(
             constraints: BoxConstraints.expand(width: 40,height: 40),
-            child:  Icon(item.icon),
-            decoration: BoxDecoration(color: Colors.white,
+            child:  Icon(item.icon,color: isSelected?AppColors.tertiaryButton: AppColors.primaryButton,),
+            decoration: BoxDecoration(color:Colors.white,
               boxShadow: [R.textStyle.dealBoxShadow()],
               borderRadius: BorderRadius.circular(10),
             ),
           ),
          Column(
             children:[
-              Text(item.count.toString(), style: R.textStyle.unselectedDealButton(),),
+              Text(item.count.toString(), style: R.textStyle.unselectedDealButton().copyWith(
+                 color: isSelected?AppColors.tertiaryButton:AppColors.primaryButton
+              ),),
            const SizedBox(height: 4,),
-              Text(item.type,style: TextStyle(fontSize: 17,fontFamily: 'Inter',fontWeight: FontWeight.bold,)),
-              Text('Deals',style: TextStyle(fontSize: 14,fontFamily: 'Inter',fontWeight: FontWeight.w400),)
+              Text(item.type,style: TextStyle(
+                color:isSelected?AppColors.white:AppColors.black,
+                fontSize: 17,fontFamily: 'Inter',fontWeight: FontWeight.bold,)),
+              Text('Deals',style: TextStyle(
+                 color: isSelected?AppColors.white:AppColors.black,
+                  fontSize: 14,fontFamily: 'Inter',fontWeight: FontWeight.w400),)
             ] ,
           )
         ],
