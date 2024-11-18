@@ -7,39 +7,36 @@ import 'package:flutter/material.dart';
  class Home extends StatelessWidget {
   const Home({super.key});
 
-  // final foodData = [
-  //   {"name": "Nonna's", "description": "Pizza, pasta, salad, lunch"},
-  //   {"name": "Burger House", "description": "Burgers, fries, drinks"},
-  //   {"name": "Sushi Place", "description": "Sushi, sashimi, rolls"},
-  // ];
+
 
 @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-        appBar: PreferredSize(preferredSize:const Size.fromHeight(113), child:
-        Padding( padding:const EdgeInsets.symmetric(vertical: 20),
+        appBar: PreferredSize(preferredSize:const Size.fromHeight(90), child:
+        Padding( padding:const EdgeInsets.symmetric(vertical: 10,),
         child:  AppBar(
           surfaceTintColor: Colors.white,
           shape:const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))) ,
           automaticallyImplyLeading: false,
           elevation: 2,
-          shadowColor: Colors.black.withOpacity(0.5), // Sets the shadow color with some opacity
+          // centerTitle: true,
+          shadowColor: Colors.black.withOpacity(0.3), // Sets the shadow color with some opacity
           backgroundColor: Colors.white,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(onPressed: (){}, icon:const Icon(Icons.location_pin)),
-              // Image(image: H)
               Image.asset(ImageConstant.homeLogoHeader,
                   height: 60,
                   width: 60,
-                  fit: BoxFit.contain),
-
-              IconButton(onPressed: (){}, icon: const Icon(Icons.search)),
-
+                  fit: BoxFit.contain)
+              ,
             ],
           ),
+          actions: [
+            IconButton(onPressed: (){}, icon: const Icon(Icons.search)),
+
+          ],
           ),
         )),
 
@@ -58,14 +55,11 @@ import 'package:flutter/material.dart';
               ),
               const SizedBox(height: 14,),
               SizedBox(
-                width: MediaQuery.of(context).size.width*0.8,
-                // margin: EdgeInsets.only(right: 40),
-// margin: EdgeInsets.all(0),
-//                 height: 180,
+                width: MediaQuery.of(context).size.width*0.9,
                 child: Ink(
                   padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 20),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(20),
                     shape: BoxShape.rectangle,
                   gradient:const LinearGradient(
                     colors:  [Color(0xFFFF9F06), Color(0xFFFFE1B4)],

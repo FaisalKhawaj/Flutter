@@ -15,7 +15,11 @@ class AppColors{
   static const Color primaryButton= Color(0xFF3865FF);
   // Secondary Colors
   static const Color secondaryColor = Color(0xFFB4A8AC);
+  static const Color secondaryBg=Color(0xFFfcfcfc);
+  static const Color tertiaryButton=Color(0xFFFFDE33);
   static const Color accentColor = Color(0xFFFF6F61);
+  static const Color pendingDeal=const Color(0xFFDAFFCE);
+  static const Color green=const Color(0xFF4EE03C);
 
   // Neutral Colors
   static const Color white = Color(0xFFFFFFFF);

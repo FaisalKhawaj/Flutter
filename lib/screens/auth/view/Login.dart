@@ -195,7 +195,7 @@ class _LoginState extends State<Login> {
                   textColor: Colors.white,
                   buttonName: 'LOG IN',
                   onPressed: (){
-                    // Get.toNamed(Routes.verifyContactDetails)
+                    Get.toNamed(Routes.bottomTab);
                   },
                   backgroundColor: AppColors.primaryButton,
                   width: MediaQuery.of(context).size.width*0.9,
